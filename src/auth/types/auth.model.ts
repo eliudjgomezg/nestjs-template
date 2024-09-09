@@ -7,10 +7,8 @@ export interface Login extends Omit<User, 'password'> {
 export interface LoginBody {
   email: string
   password: string
-  tenant_slug: string
 }
 
 export interface JwtPayload {
   id: string
-  tenant: string
 }

@@ -31,7 +31,7 @@ export class AuthService {
 
     if (!isPasswordMatch) throw new HttpException(INVALID_CREDENTIALS, HttpStatus.UNAUTHORIZED)
 
-    const payload: JwtPayload = { id: userWithOutPassword._id.toString(), tenant: userWithOutPassword.tenant._id.toString() }
+    const payload: JwtPayload = { id: userWithOutPassword._id.toString() }
 
     return { response: { ...userWithOutPassword, access_token: this.jwtService.sign(payload) } }
   }
