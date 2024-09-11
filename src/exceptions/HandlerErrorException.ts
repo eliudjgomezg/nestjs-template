@@ -1,7 +1,7 @@
 import { ExceptionFilter, Catch, ArgumentsHost, HttpStatus } from '@nestjs/common';
 import { MongoError } from 'mongodb';
 
-const INTERNAL_ERROR = "Internal server error"
+const INTERNAL_ERROR = "Hubo un error. Intentalo nuevamente"
 
 @Catch(MongoError)
 export class ErrorHandlerException implements ExceptionFilter {
